@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* VNR Connect Design System - Gen-Z Theme */
+    
+    /* Core Brand Colors */
+    --vnr-blue: 213 100% 36%;
+    --neon-yellow: 48 100% 50%;
+    --soft-lilac: 256 65% 77%;
+    --neutral-light: 216 33% 97%;
+    --dark-bg: 220 62% 7%;
+    
+    /* Semantic Tokens */
+    --background: 216 33% 97%;
+    --foreground: 220 62% 7%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 62% 7%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 62% 7%;
+    
+    --primary: 213 100% 36%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 256 65% 77%;
+    --secondary-foreground: 220 62% 7%;
+    
+    --accent: 48 100% 50%;
+    --accent-foreground: 220 62% 7%;
+    
+    --muted: 216 20% 95%;
+    --muted-foreground: 220 10% 46%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 216 20% 88%;
+    --input: 216 20% 88%;
+    --ring: 213 100% 36%;
+    
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(213 100% 36%), hsl(256 65% 77%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(216 33% 97%));
+    
+    /* Shadows */
+    --shadow-soft: 0 2px 8px hsl(220 62% 7% / 0.06);
+    --shadow-medium: 0 4px 16px hsl(220 62% 7% / 0.08);
+    --shadow-lifted: 0 8px 24px hsl(220 62% 7% / 0.12);
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .dark {
+    --background: 220 62% 7%;
+    --foreground: 216 33% 97%;
+    
+    --card: 220 50% 10%;
+    --card-foreground: 216 33% 97%;
+    
+    --popover: 220 50% 10%;
+    --popover-foreground: 216 33% 97%;
+    
+    --primary: 213 100% 50%;
+    --primary-foreground: 220 62% 7%;
+    
+    --secondary: 256 65% 65%;
+    --secondary-foreground: 220 62% 7%;
+    
+    --accent: 48 100% 60%;
+    --accent-foreground: 220 62% 7%;
+    
+    --muted: 220 40% 15%;
+    --muted-foreground: 220 10% 65%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 216 33% 97%;
+    
+    --border: 220 40% 20%;
+    --input: 220 40% 20%;
+    --ring: 213 100% 50%;
+    
+    --shadow-soft: 0 2px 8px hsl(0 0% 0% / 0.2);
+    --shadow-medium: 0 4px 16px hsl(0 0% 0% / 0.3);
+    --shadow-lifted: 0 8px 24px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px hsl(220 62% 7% / 0.12);
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+}
